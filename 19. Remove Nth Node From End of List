@@ -8,7 +8,6 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
- // Copy listnode to a list, and delete the n element from the end, use the remaining list to create new listnode
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         List<Integer> list = new ArrayList<Integer>();
