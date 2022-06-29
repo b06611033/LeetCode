@@ -1,4 +1,4 @@
-// will exceed time limit in very large cases
+// will exceed time limit in large cases
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
         return segment(s, 0, wordDict);
