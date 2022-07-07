@@ -10,6 +10,16 @@
  * }
  */
 
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // find p
@@ -22,7 +32,7 @@ class Solution {
             else node = node.right;
         }
         //find q
-        List<TreeNode> listq = new ArrayList<TreeNode>();
+        Set<TreeNode> listq = new HashSet<TreeNode>();
         node = root;
         while (node.val != q.val) {
             listq.add(node);
@@ -32,9 +42,7 @@ class Solution {
         }
         for (int i = listp.size()-1; i >= 0; i--) {
              TreeNode temp = listp.get(i); 
-             for (int j = listq.size()-1; j >= 0; j--) {
-                   if (temp == listq.get(j)) return temp;
-             }
+             if (listq.contains(temp)) return temp;
         }
         return null;
     }
